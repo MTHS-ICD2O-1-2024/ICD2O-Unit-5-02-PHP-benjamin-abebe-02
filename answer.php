@@ -10,7 +10,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
@@ -19,37 +19,28 @@
 </head>
 
 <body>
-  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-  <script src="./js/script.js"></script>
+
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Positive or Negative #, in JS</span>
+        <span class="mdl-layout-title">Generated Number</span>
       </div>
     </header>
     <main class="mdl-layout__content">
-      <div class="right-image">
-        <img src="./positive_negative.jpg" alt="Picture of the first Hello World" />
-      </div>
-      <div class="page-content">Select what kind of number you would like to generate. </div>
-      <br />
-      <!-- Accent-colored raised button with ripple -->
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-positive">
-        <input type="radio" id="option-positive" class="mdl-radio__button" name="kind-of-number" value="1" checked>
-        <span class="mdl-js-radio__label">Positive</span>
-      </label>
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-negative">
-        <input type="radio" id="option-negative" class="mdl-radio__button" name="kind-of-number" value="2">
-        <span class="mdl-js-radio__label">Negative</span>
-      </label>
-      </form>
-      <br />
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-        onclick="myButtonClicked()" type="button">
-        Generate number!
-      </button>
-      <div class="page-content-answer">
-        <div id="answer"></div>
+      <div class="page-content">
+        <?php
+        $randomPositive = rand(1, 6);
+        $randomNegative = rand(-6, -1);
+        $choice = $_GET['kind-of-number'];
+
+        if ($choice == "1") {
+          echo "<h4>The random <strong>positive</strong> number is: " . $randomPositive . "</h4>";
+        } else {
+          echo "<h4>The random <strong>negative</strong> number is: " . $randomNegative . "</h4>";
+        }
+        ?>
+        <br />
+        <a class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" href="./index.php">Try Again</a>
       </div>
     </main>
   </div>

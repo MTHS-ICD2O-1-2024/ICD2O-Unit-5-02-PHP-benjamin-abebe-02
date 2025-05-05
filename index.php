@@ -1,21 +1,21 @@
 <!DOCTYPE html>
-<!-- ICS2O-Unit5-02-HTML-MDL -->
+<!-- ICS2O-Unit5-02-PHP-MDL -->
 <html lang="en-ca">
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Positive or Negative #, in JS" />
+  <meta name="description" content="Positive or Negative #, in PHP" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Benjamin" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
   <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css" />
-  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./style.css" />
   <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="manifest" href="./site.webmanifest" />
-  <title>Positive or Negative #, in JS</title>
+  <title>Positive or Negative #, in PHP</title>
 </head>
 
 <body>
@@ -28,31 +28,29 @@
       </div>
     </header>
     <main class="mdl-layout__content">
-      <div class="right-image">
-        <img src="./positive_negative.jpg" alt="Picture of the first Hello World" />
-      </div>
-      <div class="page-content">Select what kind of number you would like to generate. </div>
-      <br />
-      <!-- Accent-colored raised button with ripple -->
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-positive">
-        <input type="radio" id="option-positive" class="mdl-radio__button" name="kind-of-number" value="1" checked>
-        <span class="mdl-js-radio__label">Positive</span>
-      </label>
-      <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-negative">
-        <input type="radio" id="option-negative" class="mdl-radio__button" name="kind-of-number" value="2">
-        <span class="mdl-js-radio__label">Negative</span>
-      </label>
+      <form action="./answer.php" method="GET">
+        <div class="right-image">
+          <img src="./positive_negative.jpg" alt="Image representing positive and negative numbers" />
+        </div>
+        <div class="page-content">Select what kind of number you would like to generate.</div>
+        <br />
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-positive">
+          <input type="radio" id="option-positive" class="mdl-radio__button" name="kind-of-number" value="1" checked>
+          <span class="mdl-js-radio__label">Positive</span>
+        </label>
+        <label class="mdl-radio mdl-js-radio mdl-js-ripple-effect" for="option-negative">
+          <input type="radio" id="option-negative" class="mdl-radio__button" name="kind-of-number" value="2">
+          <span class="mdl-js-radio__label">Negative</span>
+        </label>
+        <br />
+        <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
+          type="submit">
+          Generate number!
+        </button>
       </form>
-      <br />
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-        onclick="myButtonClicked()" type="button">
-        Generate number!
-      </button>
       <div class="page-content-answer">
         <div id="answer"></div>
       </div>
     </main>
   </div>
 </body>
-
-</html>
